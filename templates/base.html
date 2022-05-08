@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Models</title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Create User</a>
+        <a href="{{ url_for('users') }}">Users</a>
+    </nav>
+    <br><br>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>
