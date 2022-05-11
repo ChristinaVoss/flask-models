@@ -1,12 +1,13 @@
 import os
 from flask import Flask, render_template, redirect, url_for
+# Database related imports:
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
+# Form related imports:
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import InputRequired
-#from models import User
 
 app = Flask(__name__)
 
@@ -25,7 +26,7 @@ db = SQLAlchemy(app)
 Migrate(app, db)
 
 ##########################################
-############ DEFINE A MODEL ##############
+### DEFINE A MODEL (DATABASE TABLE) ######
 ##########################################
 
 class User(db.Model):
@@ -53,16 +54,18 @@ class CreateUser(FlaskForm):
     submit = SubmitField("Create user")
 
 ##########################################
-################### VIEW #################
+########## VIEW (CONTROLLER) #############
 ##########################################
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form = CreateUser()
     if form.validate_on_submit():
+        # Crete a new user with the submitted info from the form:
         user = User(email=form.email.data,
                     name = form.name.data)
 
+        # To update the database:
         db.session.add(user)
         db.session.commit()
         return redirect(url_for('users'))
@@ -70,5 +73,6 @@ def index():
 
 @app.route('/users')
 def users():
+    # Query the database:
     users_list = User.query.all()
     return render_template('users.html', users_list=users_list)
