@@ -34,10 +34,15 @@ You should now be able to see the output in your browser window (at http://127.0
 
 ### Resulting pages
 
+index.html
 
+<img width="304" alt="Screenshot 2022-05-11 at 15 55 15" src="https://user-images.githubusercontent.com/20923607/167881268-7b77ffbc-03ac-4eeb-adeb-9775664792a9.png">
 
 ======================================================
 
+users.html
+
+<img width="342" alt="Screenshot 2022-05-11 at 15 54 22" src="https://user-images.githubusercontent.com/20923607/167881350-5db9f546-0448-477a-9d7a-fcc87fed3e06.png">
 
 
 
