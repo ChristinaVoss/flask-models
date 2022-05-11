@@ -61,13 +61,14 @@ class CreateUser(FlaskForm):
 def index():
     form = CreateUser()
     if form.validate_on_submit():
-        # Crete a new user with the submitted info from the form:
+        # Create a new user with the submitted info from the form:
         user = User(email=form.email.data,
                     name = form.name.data)
 
-        # To update the database:
+        # To add a row to the User table in the database:
         db.session.add(user)
         db.session.commit()
+        # then redirect to list all users:
         return redirect(url_for('users'))
     return (render_template('index.html', form=form))
 
