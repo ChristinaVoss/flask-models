@@ -36,7 +36,8 @@ You should now be able to see the output in your browser window (at http://127.0
 
 index.html
 
-<img width="304" alt="Screenshot 2022-05-11 at 15 55 15" src="https://user-images.githubusercontent.com/20923607/167881268-7b77ffbc-03ac-4eeb-adeb-9775664792a9.png">
+<img width="300" alt="Screenshot 2022-05-11 at 16 04 01" src="https://user-images.githubusercontent.com/20923607/167883070-c3493dfd-3697-4549-9095-8f70a004f82e.png">
+
 
 ======================================================
 
