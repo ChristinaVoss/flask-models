@@ -1,6 +1,12 @@
 # Flask models
 
+### App structure
+
 Now that we have several "moving parts", I have made this app fairly simple, with form, model and controller (@route) in app.py. In a real app consider moving the model into its own models.py file (or even have separate models.py files for each part of the application, as demonstrated in [flask-blueprints](https://github.com/ChristinaVoss/flask-blueprints).
+
+
+<img width="632" alt="Screenshot 2022-05-12 at 09 39 07" src="https://user-images.githubusercontent.com/20923607/168029239-c23abd0c-cd5f-421a-8c99-3570209aeb19.png">
+
 
 ### Setup
 
