@@ -40,16 +40,15 @@ You should now be able to see the output in your browser window (at http://127.0
 
 ### Resulting pages
 
-index.html
+**index.html**
 
-<img width="300" alt="Screenshot 2022-05-11 at 16 04 01" src="https://user-images.githubusercontent.com/20923607/167883070-c3493dfd-3697-4549-9095-8f70a004f82e.png">
+<img width="522" alt="Screenshot 2022-05-12 at 18 05 26" src="https://user-images.githubusercontent.com/20923607/168130267-85438f4c-7ea6-4ec5-98f4-b825c29ee6b6.png">
 
 
-======================================================
+**users.html**
 
-users.html
+<img width="519" alt="Screenshot 2022-05-12 at 18 05 47" src="https://user-images.githubusercontent.com/20923607/168130279-0a65d6d6-c838-4248-bf5b-e12318ea7778.png">
 
-<img width="342" alt="Screenshot 2022-05-11 at 15 54 22" src="https://user-images.githubusercontent.com/20923607/167881350-5db9f546-0448-477a-9d7a-fcc87fed3e06.png">
 
 
 
