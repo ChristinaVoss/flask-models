@@ -7,6 +7,62 @@ Now that we have several "moving parts", I have made this app fairly simple, wit
 
 <img width="632" alt="Screenshot 2022-05-12 at 09 39 07" src="https://user-images.githubusercontent.com/20923607/168029239-c23abd0c-cd5f-421a-8c99-3570209aeb19.png">
 
+**Key parts**
+
+In app.py:
+
+Import your installed libraries related to database and migrations:
+
+```
+from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
+```
+Configure your database (set data path etc), and define a variable to use for your database queries (db):
+
+```
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+os.path.join(basedir, 'data.sqlite')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+Migrate(app, db)
+```
+
+Define your database table (called model, though defined as a Python class and inherits from db.Model). Include an `__init__()` method to initialise your objects and and a `__repr__()` method to give your bojects a string representation (so you can print them...):
+
+```
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+
+    # initialise an instance (row) of a table/entity
+    def __init__(self, email, name):
+        self.email = email
+        self.name = name
+
+    def __repr__(self):
+        return '<User %r>' % self.username
+```
+
+At the bottom of your model definitions (if you have more than one), add this line to create the tables:
+
+`db.create_all()`
+
+You can now create a user in @app.route('/'):
+
+```
+user = User(email=form.email.data,
+            name = form.name.data)
+
+# To add a row to the User table in the database:
+db.session.add(user)
+db.session.commit()
+```
+
+And query the database as seen in @app.route('/users'):
+
+`users_list = User.query.all()`
 
 ### Setup
 
